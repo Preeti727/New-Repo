@@ -1,19 +1,14 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 int closestNumber(int n, int m){
-    int lower= round(n/m)*m;
-    int upper = round((n%m==0?n:(n/m+1)*m));
-    int upperdiff = abs(upper - n);
+    int lower = (n/m)*m;
+    int upper = (n*m)>0?(((n/m)+1)*m) : (((n/m)-1)*m);
+    int upperdiff = abs(n - upper);
     int lowerdiff = abs(n - lower);
-    if (upperdiff<lowerdiff){
+    if (upperdiff<lowerdiff)
         return upper;
-    }
-    else if(lowerdiff<upperdiff){
-        return lower;
-    }
-    else{
-        return (abs(lower)>abs(upper)?lower:upper);
-    }
+    return lower;
 }
 int main(){
     int m,n;
