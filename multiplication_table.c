@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 int multiTable(int i,int x){
     if(x==11){
         return 0;
@@ -14,5 +15,6 @@ int main(){
     printf("Enter a number: ");
     scanf("%d",&i);
     multiTable(i,x);
+    getch();
     return 0;
 }
