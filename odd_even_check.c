@@ -1,12 +1,11 @@
 #include<stdio.h>
 int odd_even_check(int a){
-    if (a%2==0){
-        printf("%d is an even number",a);
+    if((a&1)==0){
+        printf("%d is even ",a);
     }
     else{
-        printf("%d is an odd number",a);
+        printf("%d is odd",a);
     }
-    return 0;
 }
 int main(){
     int num;
